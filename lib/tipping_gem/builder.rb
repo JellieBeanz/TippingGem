@@ -1,3 +1,9 @@
+class String
+  def integer?
+    return true if self =~ /^[1-9]\d*(\.\d+)?$/
+    false
+  end
+end
 module TippingGem
 
     class Builder
@@ -28,5 +34,5 @@ module TippingGem
         def calculation gratuity = @gratuity
           @total += @total * (gratuity.to_f / 100)
         end
-      end 
+      end
 end
