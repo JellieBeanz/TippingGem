@@ -4,6 +4,7 @@ class String
     false
   end
 end
+
 module TippingGem
 
     class Builder
