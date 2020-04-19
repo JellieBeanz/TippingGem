@@ -1,4 +1,6 @@
-require_relative 'lib/tipping_gem/version'
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'tipping_gem/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "tipping_gem"
@@ -8,6 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Gem for tipping a post}
   spec.homepage      = "https://github.com/JellieBeanz/TippingGem.git"
+  spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
   # reference to Jordan Hudgens https://rubygems.org/gems/tippy/versions/0.1.2
 
@@ -20,4 +23,7 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.13"
+  spec.add_development_dependency "rake", "~> 10.0"
 end
